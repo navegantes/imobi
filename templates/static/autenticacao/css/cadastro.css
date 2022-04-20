@@ -1,0 +1,129 @@
+.sidebar {
+  {% comment %} background-color: #3094cd; {% endcomment %}
+  {% comment %} background: rgb(48, 148, 205);
+  background: linear-gradient(
+    180deg,
+    rgba(48, 148, 205, 1) 0%,
+    rgba(87, 189, 242, 1) 41%,
+    rgba(136, 245, 220, 1) 100%
+  ); {% endcomment %}
+  background: rgb(14,145,218);
+  background: linear-gradient(180deg, rgba(14,145,218,1) 0%, rgba(111,197,242,1) 50%, rgba(202,251,235,1) 100%); 
+  height: 100vh;
+}
+
+.cor_branca {
+  color: white;
+}
+
+.logo_sidebar {
+  text-align: center;
+  margin-top: 50%;
+}
+
+.img_logo_sidebar {
+  width: 70px;
+}
+
+.logo {
+  font-size: 70px;
+  color: white;
+  font-family: "Courier New", Courier, monospace;
+}
+
+.corpo_sidebar {
+  margin-top: 50px;
+  text-align: center;
+}
+
+.titulo {
+  font-size: 50px;
+  font-weight: bold;
+  border-bottom: 2px solid white; /*#1ea9b1;*/
+  display: inline;
+}
+
+.descricao {
+  font-size: 30px;
+}
+
+.btn_logar {
+  color: white;
+  font-size: 30px;
+  border: 2px solid white;
+  padding: 10px 20px 10px 20px;
+  border-radius: 20px;
+}
+
+.btn_logar:hover {
+  text-decoration: none;
+  color: white;
+}
+
+.area_cadastrar {
+  text-align: center;
+}
+
+.img_background {
+  position: absolute;
+  background-image: url("/static/autenticacao/img/buy_house.svg");
+  width: 58rem;
+  height: 28rem;
+  background-size: cover;
+  background-repeat: no-repeat;
+  left: 50%;
+  transform: translate(-50%);
+  bottom: 5%;
+  z-index: -1;
+  /* border: 1px solid lime; */
+}
+
+.titulo_area_cadastrar {
+  font-size: 50px;
+  color: #3094cd;
+  margin-top: 15%;
+  font-weight: bold;
+}
+
+.input_cadastrar {
+  width: 26rem;
+  border: none;
+  border-radius: 30px;
+  background-color: #c4c4c4;
+  padding: 10px;
+  outline: 0;
+  font-size: 20px;
+  background-size: 30px 30px;
+  background-repeat: no-repeat;
+  background-position-x: 20px;
+  background-position-y: 10px;
+  padding-left: 70px;
+}
+
+.input_cadastrar:focus {
+  {% comment %} border: 2px solid lime; {% endcomment %}
+  -webkit-box-shadow: 2px 2px 15px 5px #6FC5F2; 
+  box-shadow: 2px 2px 15px 5px #6FC5F2;
+}
+
+.input_cadastrar_nome {
+  background-image: url("/static/autenticacao/img/user2.png");
+}
+
+.input_cadastrar_email {
+  background-image: url("/static/autenticacao/img/email2.png");
+}
+
+.input_cadastrar_senha {
+  background-image: url("/static/autenticacao/img/senha2.png");
+}
+
+.btn_cadastrar {
+  background-color: #3094cd;
+  border: none;
+  color: white;
+  font-size: 30px;
+  padding: 5px 30px;
+  border-radius: 20px;
+  margin-top: 4%;
+}
