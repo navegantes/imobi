@@ -4,6 +4,7 @@
 
 .container {
     margin-bottom: 50px;
+    width: 80vw;
 }
 
 .bg_navbar{
@@ -81,11 +82,11 @@
     color: var(--color);
     font-weight: bold;
     margin-top: 20px;
-    font-size: 40px;
+    font-size: 32px;
 }
 
 .especificacao{
-    font-size: 30px;
+    font-size: 24px;
     font-weight: bold;
 }
 

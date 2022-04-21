@@ -9,7 +9,7 @@
 
 {% block 'body' %}
 
-<div class="container">
+<div class="container-fluid px-5">
   <br>
   <button type="button" class="btn_filtrar" data-toggle="modal" data-target="#exampleModal">
     FILTRAR
@@ -18,7 +18,7 @@
   <div class="row">
 
     {% for imovel in imoveis %}
-    <div class="col cont">
+    <div class="col row justify-content-center">
       <div class="card_imovel">
         <a class="a_none" href="{% url 'imovel' imovel.id %}">
           <img class="img_capa_imovel" src="{{imovel.imagens.all.0.img.url}}">

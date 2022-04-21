@@ -43,7 +43,14 @@ def imovel(request, id):
     sugestoes = Imovel.objects.filter(cidade=imovel.cidade).exclude(id=id)[:2]
     user_visitas = Visitas.objects.filter(usuario=request.user)
     # get_FOO_display
-    status = Visitas.objects.filter(imovel_id=id)[0].get_status_display
+    query_status = Visitas.objects.filter(imovel_id=id)
+
+    if len(query_status) == 0:
+        status = 'none'
+    else:
+        status = query_status[0].get_status_display
+
+    print("\n\n", status, "\n\n")
 
     visitas_id_lista = [elem.imovel.id for elem in user_visitas]
     # print("\n\n", Visitas._meta.get_field('status').choices, "\n\n")

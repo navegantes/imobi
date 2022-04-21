@@ -1,8 +1,7 @@
 <div align="center" id="top"> 
-  <img src="./public/logo.png" alt="Imobi" />
+  <img src="./public/logo.png" alt="Imobi" width=400/>
 
 <!-- &#xa0; -->
-
   <!-- <a href="https://imobi.netlify.com">Demo</a> -->
 </div>
 
@@ -24,9 +23,9 @@
   <!-- <img alt="Github stars" src="https://img.shields.io/github/stars/navegantes/imobi?color=56BEB8" /> -->
 </p>
 
-<!-- Status -->
+<!-- Status
 
-<!-- <h4 align="center"> 
+<h4 align="center"> 
 	🚧  Imobi 🚀 Em construção...  🚧
 </h4> 
 
@@ -42,7 +41,16 @@
   <a href="https://github.com/navegantes" target="_blank">Autor</a>
 </p>
 
-<br>
+<div align="center" id="top"> 
+  <img src="./public/login.png" alt="login" width=400/>
+  <img src="./public/cadastre-se.png" alt="cadastre-se" width=400/>
+  <img src="./public/home.png" alt="home" width=400/>
+  <img src="./public/imovel_recomend.png" alt="imovel" width=400 height=258 />
+  <img src="./public/imovel.png" alt="imovel" width=400 />
+  <img src="./public/agendamentos.png" alt="imovel_agendar" width=400 />
+  <img src="./public/imovel_agendar.png" alt="imovel_agendar" height=156 width=400/>
+  <img src="./public/imovel_agendado.png" alt="imovel_agendado" width=400/>
+</div>
 
 ## 🎯 Sobre
 
@@ -51,9 +59,12 @@ O projeto foi desenvolvido durante o evento PYSTACK WEEK 2.0 da [Pythonando](htt
 
 ## ✨ Funcionalidades
 
-✔️ Funcionalidade 1;\
-✔️ Funcionalidade 2;\
-✔️ Funcionalidade 3;
+✔️ Login/Logout;\
+✔️ Cadastro de usuários;\
+✔️ Agendamento de imóveis;\
+❌ Recuperação de senha;\
+❌ Atualização de perfil;
+
 
 ## 🚀 Tecnologias
 
@@ -65,24 +76,60 @@ As seguintes ferramentas foram usadas na construção do projeto:
 
 ## ✅ Pré requisitos
 
-Antes de começar :checkered_flag:, você precisa ter o [Git](https://git-scm.com) e o [Node](https://nodejs.org/en/) instalados em sua maquina.
+Antes de começar 🏁, você precisa ter o [Python](https://www.python.org/downloads/) instalado em sua maquina.
 
 ## 🏁 Começando
 
+1🚩 Primeiro clone o repositório e entre na pasta do projeto.
 ```bash
 # Clone este repositório
-$ git clone https://github.com/navegantes/imobi
+$ git clone https://github.com/navegantes/imobi.git
 
 # Entre na pasta
 $ cd imobi
+```
+2🚩 Depois inicie um ambiente virtual
 
-# Instale as dependências
-$ yarn
+```bash
+# Criar
+    $ python -m venv venv
+# Ativação do ambiente virtual
+  # Linux
+    $ source venv/bin/activate
+  # Windows
+    $ .\venv\Scripts\Activate
+# No powershell caso algum comando retorne um erro de permissão
+# execute o comando a seguir e tente novamente:
+  $ Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned
+```
 
+3🚩 Instale as dependências
+
+```bash
+  $ pip install -r requirements.txt
+```
+
+4🚩 Faça as migrações.
+
+```bash
+  $ python manage.py migrate
+```
+
+5🚩 Crie um super usuário
+
+```bash
+  $ python .\manage.py createsuperuser
+```
+
+6🚩 Inicie a aplicação
+
+```bash
 # Para iniciar o projeto
-$ yarn start
-
-# O app vai inicializar em <http://localhost:3000>
+$ python manage.py runserver
+# O app vai inicializar em <http://127.0.0.1:8000/>
+# Para iniciar o projeto em uma porta especifica
+$ python manage.py runserver <porta>
+# O app vai inicializar em <http://127.0.0.1:<porta>/>
 ```
 
 ## 📝 Licença

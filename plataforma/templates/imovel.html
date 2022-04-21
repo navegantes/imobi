@@ -7,85 +7,84 @@
 
 {% block 'body' %}
 
-<div style="text-align: center" class="container">
-  <br>
-  <br>
-  <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-    <div class="carousel-inner">
-      {% for img in imovel.imagens.all  %}
-      <div class="carousel-item {% if forloop.first %} active {% endif %}">
-        <img class="d-block w-100" src="{{img}}" alt="First slide">
+<div style="text-align: center" class="row mx-5">
+  <div style="text-align: center" class="col">
+    <br>
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+      <ol class="carousel-indicators">
+        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+      </ol>
+      <div class="carousel-inner">
+        {% for img in imovel.imagens.all  %}
+        <div class="carousel-item {% if forloop.first %} active {% endif %}">
+          <img class="d-block w-100" src="{{img}}" alt="First slide">
+        </div>
+        {% endfor %}
       </div>
-      {% endfor %}
-
+      <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
     </div>
-    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="sr-only">Next</span>
-    </a>
-  </div>
-
-
-  <div class="row">
-    <div class="col-md">
-      <h3 class="titulo_especificacao">Valor</h3>
-      <p class="especificacao">R$ {{imovel.valor}}</p>
-
-    </div>
-
-    <div class="col-md">
-      <h3 class="titulo_especificacao">Quartos</h3>
-      <p class="especificacao">{{imovel.quartos}} Quartos</p>
-    </div>
-
-    <div class="col-md">
-      <h3 class="titulo_especificacao">Tamanho</h3>
-      <p class="especificacao">{{imovel.tamanho}}m²</p>
-    </div>
-
-  </div>
-  <br>
-  <br>
-  <div style="text-align: left">
-    <h3 class="titulo_especificacao">Endereço</h3>
-    <p class="especificacao_endereco">{{imovel.rua}}, {{imovel.cidade }}</p>
-  </div>
-
-  <br>
-  <div style="text-align: left">
-    <h3 class="titulo_especificacao">Descricao</h3>
-    <p class="especificacao_endereco">{{imovel.descricao}}</p>
-    <br>
-    <button class="btn_agendar_visita" data-toggle="modal" data-target="#exampleModal">AGENDAR VISITA</button>
-    <br>
-    <br>
-  </div>
-
-  <hr style="border: 1px solid black">
-  <br>
-  <div class="div_possivel_interesse">
-    <h3 class="titulo_especificacao">Talvez você se interesse por</h3>
     <div class="row">
-      {% for sugestao in sugestoes %}
-      <div class="col-md cont">
-        <a class="a_none" href="{% url 'imovel' sugestao.id %}">
-          <div class="card_imovel">
-            <img class="img_capa_imovel" src="{{sugestao.imagens.all.0.img.url}}">
-            <div class="informacoes_imoveis">
-              <h4 class="valor">R$ {{sugestao.valor}}</h4>
-              <p>{{sugestao.rua}}, {{sugestao.cidade}}</p>
-              <br>
-              <img width="7%" src="{% static 'plataforma/img/heart.png' %}">
-            </div>
-          </div>
-        </a>
+      <div class="col-md">
+        <h3 class="titulo_especificacao">Valor</h3>
+        <p class="especificacao">R$ {{imovel.valor}}</p>
       </div>
-      {% endfor %}
+      <div class="col-md">
+        <h3 class="titulo_especificacao">Quartos</h3>
+        <p class="especificacao">{{imovel.quartos}} Quartos</p>
+      </div>
+      <div class="col-md">
+        <h3 class="titulo_especificacao">Tamanho</h3>
+        <p class="especificacao">{{imovel.tamanho}}m²</p>
+      </div>
     </div>
+  </div>
+
+  <div style="text-align: center" class="col">
+    <div style="text-align: left">
+      <h3 class="titulo_especificacao">Endereço</h3>
+      <p class="especificacao_endereco">{{imovel.rua}}, {{imovel.cidade }}</p>
+    </div>
+
+    <hr style="border: 1px solid gray">
+
+    <div style="text-align: left">
+      <h3 class="titulo_especificacao">Descricao</h3>
+      <p class="especificacao_endereco">{{imovel.descricao}}</p>
+      <br>
+      <button class="btn_agendar_visita" data-toggle="modal" data-target="#exampleModal">AGENDAR VISITA</button>
+      <br>
+      <br>
+    </div>
+  </div>
+</div>
+
+<hr style="border: 1px solid gray">
+<div class="div_possivel_interesse mx-5">
+  <h3 class="titulo_especificacao">Talvez você se interesse por</h3>
+  <div class="row">
+    {% for sugestao in sugestoes %}
+    <div class="col-md cont">
+      <a class="a_none" href="{% url 'imovel' sugestao.id %}">
+        <div class="card_imovel">
+          <img class="img_capa_imovel" src="{{sugestao.imagens.all.0.img.url}}">
+          <div class="informacoes_imoveis">
+            <h4 class="valor">R$ {{sugestao.valor}}</h4>
+            <p>{{sugestao.rua}}, {{sugestao.cidade}}</p>
+            <br>
+            <img width="7%" src="{% static 'plataforma/img/heart.png' %}">
+          </div>
+        </div>
+      </a>
+    </div>
+    {% endfor %}
   </div>
 </div>
 
